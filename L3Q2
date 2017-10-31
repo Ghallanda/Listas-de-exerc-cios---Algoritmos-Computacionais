@@ -1,0 +1,11 @@
+public class q2 {
+	public static void main (String [] args) {
+		int num = 0;
+		for (num = 1050; num <= 2400; num++) {
+			if (num % 4 == 0) {
+				System.out.println(num);
+			}
+			
+		}
+	}
+}
