@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class q6 {
+	public static void main (String [] args) {
+		int ano;
+		Scanner scanner = new Scanner (System.in);
+		System.out.println("Digite o ano:");
+		ano = scanner.nextInt();
+		if (ano%400 == 0) {
+			System.out.println("O ano é bissexto!");
+		}
+		else if (ano%4 == 0 && ano % 100 != 0) {
+			System.out.println("O ano é bissexto!");
+		}
+		else {
+			System.out.println("O ano não é bissexto!");
+		}
+	}
+}
