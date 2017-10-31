@@ -1,0 +1,120 @@
+import java.util.Scanner;
+public class calculadora {
+	public static void main (String [] args) {
+		String op;
+		double num1, num2, num3;
+		Scanner scanner = new Scanner (System.in);
+		System.out.println("Escolha a operação \nSoma - s \nSubtração - sub \nMultiplicação - m \nDivisão - d \nExponenciação - e \nRaiz Quadrada - rq \nBaskara - bas \nCosseno - cos \nTangente - tan \nSeno - sen \nFatorial - fat \nExponencial Base 10 - eb10 \nLogaritmo - log");
+		op = scanner.next();
+		switch (op) {
+		case "s":
+			System.out.println("Digite um numero:");
+			num1 = scanner.nextDouble();
+			System.out.println("Digite outro numero:");
+			num2 = scanner.nextDouble();
+			double soma = num1 + num2;
+			System.out.println("RESULTADO: " + soma);
+			break;
+		case "sub":
+			System.out.println("Digite um numero:");
+			num1 = scanner.nextDouble();
+			System.out.println("Digite outro numero:");
+			num2 = scanner.nextDouble();
+			double sub = num1 - num2;
+			System.out.println("RESULTADO: " + sub);
+			break;
+		case "m":
+			System.out.println("Digite um numero:");
+			num1 = scanner.nextDouble();
+			System.out.println("Digite outro numero:");
+			num2 = scanner.nextDouble();
+			double multi = num1 * num2;
+			System.out.println("RESULTADO: " + multi);
+			break;
+		case "d":
+			System.out.println("Digite o dividendo:");
+			num1 = scanner.nextDouble();
+			System.out.println("Digite o divisor:");
+			num2 = scanner.nextDouble();
+			double divisao = num1 / num2;
+			System.out.println("RESULTADO: " + divisao);
+			break;
+		case "e":
+			System.out.println("Digite a base:");
+			num1 = scanner.nextDouble();
+			System.out.println("Digite o exponente:");
+			num2 = scanner.nextDouble();
+			double exp = Math.pow(num1, num2);
+			System.out.println("RESULTADO: " + exp);
+			break;
+		case "rq":
+			System.out.println("Digite o número:");
+			num1 = scanner.nextDouble();
+			double rq = Math.sqrt(num1);
+			System.out.println("RESULTADO: " + rq);
+			break;
+		case "bas":
+			double a, b, c, delta, x1, x2;
+			System.out.println("Insira a: ");
+			a = scanner.nextDouble();
+			System.out.println("Insira b: ");
+			b = scanner.nextDouble();
+			System.out.println("Insira c: ");
+			c = scanner.nextDouble();
+			delta = (b*b)-(4*a*c);
+			x1 = ((-b)+Math.sqrt(delta))/2*a;
+			x2 = ((-b)-Math.sqrt(delta))/2*a;
+			System.out.println("RESULTADO > X1 = " + x1 + " e X2 = " + x2);
+			break;
+		case "cos":
+			double hip, catad, cos, catop;
+			System.out.println("Insira a hipotenusa: ");
+			hip = scanner.nextDouble();
+			System.out.println("Insira o cateto adjacente: ");
+			catad = scanner.nextDouble();
+			cos = catad/hip;
+			System.out.println("RESULTADO: " + cos);
+			break;
+		case "tan":
+			System.out.println("Insira o cateto adjacente: ");
+			catad = scanner.nextDouble();
+			System.out.println("Insira o cateto oposto: ");
+			catop = scanner.nextDouble();
+			double tan = catop / catad;
+			System.out.println("RESULTADO: " + tan);
+			break;
+		case "sen":
+			double sen;
+			System.out.println("Insira o cateto oposto: ");
+			catop = scanner.nextDouble();
+			System.out.println("Insira a hipotenusa: ");
+			hip = scanner.nextDouble();
+			sen = catop / hip;
+			System.out.println("RESULTADO: " + sen);
+			break;
+		case "fat":
+			System.out.println("Insira um número: ");
+			num1 = scanner.nextDouble();
+			double fat = 1;
+			int i;
+			for (i = 1; i<=num1;i++) {
+				fat = fat * i;
+			}
+			System.out.println("RESULTADO: " + fat);
+			break;
+		case "eb10":
+			System.out.println("Digite o exponente: ");
+			num1 = scanner.nextDouble();
+			double eb10 = Math.pow(10, num1);
+			System.out.println("RESULTADO: " + eb10);
+			break;
+		case "log":
+			System.out.println("Insira o número:");
+			num1 = scanner.nextDouble();
+			double log = Math.log(num1);
+			System.out.println("RESULTADO: " + log);
+			break;
+		}
+	}
+	
+}
