@@ -1,0 +1,10 @@
+public class q8 {
+	public static void main (String [] args) {
+		int cont, num= 1;
+		for (cont = 1; cont <= 25; cont++) {
+			System.out.println(num);
+			num = num + 3;
+			
+		}
+	}
+}
