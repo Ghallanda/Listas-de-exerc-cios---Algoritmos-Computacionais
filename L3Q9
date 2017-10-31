@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class q11 {
+	public static void main (String [] args) {
+		Scanner s = new Scanner (System.in);
+		int n, mult;
+		System.out.println("Digite um numero entre 1 e 50:");
+		n = s.nextInt();
+		for (mult = 1; mult <=250; mult++) {
+			mult = n * 2;
+			n= mult;
+			if (mult <= 250) {
+				System.out.println(n);
+			}
+		}
+	}
+
+}
