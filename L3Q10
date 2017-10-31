@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class q33 {
+	public static void main (String [] args) {
+		int fat = 1; 
+		int valor;
+		Scanner s = new Scanner (System.in);
+		System.out.println("Digita um numero:");
+		valor = s.nextInt();
+		for (int i = 2; i <= valor; i++) {
+			fat = fat * i;
+		}
+		System.out.println("fatorial de " + valor + " = " + fat);
+	}
+	
+}
