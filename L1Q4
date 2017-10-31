@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class q5 {
+	public static void main (String [] args) {
+		double veloc_permitida, veloc_percorrida;
+		Scanner scanner = new Scanner (System.in);
+		System.out.println("Velocidade do veículo: ");
+		veloc_percorrida = scanner.nextDouble();
+		System.out.println("Velocidade permitida: ");
+		veloc_permitida = scanner.nextDouble();
+		System.out.println("Velocidade permitida: " + veloc_permitida + "km/h.");
+		System.out.println("Velocidade do veículo: " + veloc_percorrida + "km/h.");
+		if (veloc_percorrida > veloc_permitida) {
+			double diferença = veloc_percorrida - veloc_permitida;
+			int valor = 0;
+			if (diferença <= 10) {
+				valor = 50;
+				System.out.println("O total da multa é de R$" + valor + ".");
+			}
+			else if (diferença > 10 && diferença <=30) {
+				valor = 100;
+				System.out.println("O total da multa é de R$" + valor + ".");
+			}
+			else if (diferença > 30) {
+				valor = 200;
+				System.out.println("O total da multa é de R$" + valor + ".");
+			}
+		}
+		else if (veloc_permitida >= veloc_percorrida) {
+			System.out.println("Não houve excesso de velocidade!");
+		}
+	}
+}
