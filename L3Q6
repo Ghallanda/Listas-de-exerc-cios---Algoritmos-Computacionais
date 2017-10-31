@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class q6 {
+	public static void main (String [] args) {
+		String a;
+		int cont, tab, mult;
+		for (tab=1; tab<=5; tab++) {
+			System.out.println("Tabuada do " + tab); 
+			for (cont=0; cont<=10;cont++) {
+				mult = cont * tab;
+				System.out.println(tab + " x " + cont + " = " + mult);
+			}
+			Scanner s = new Scanner(System.in);
+			System.out.println("Continuar? (SIM / NÃO)");
+			a = s.next();
+		}
+	}
+}
