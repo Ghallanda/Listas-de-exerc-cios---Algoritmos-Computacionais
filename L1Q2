@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class q1 {
+	public static void main (String [] args ) {
+		final double dolar = 2.5;
+		double valor_dolar;
+		Scanner scanner = new Scanner (System.in);
+		System.out.println("Digite o valor em dolar: ");
+		valor_dolar = scanner.nextDouble();
+		double valor_real = valor_dolar * dolar;
+		System.out.println("O valor em reais é: R$" + valor_real);
+	}
+
+}
