@@ -1,0 +1,112 @@
+import java.util.Scanner;
+public class q3 {
+	static double pi = 3.14;
+	public static void main (String [] args) {
+		double raio, ase, base, height, prof, larg;
+		Scanner scanner = new Scanner (System.in);
+		System.out.println("CALCULADORA DE ÁREAS E VOLUMES");
+		System.out.println("1 - ÁREA /n 2 - VOLUME");
+		int op = scanner.nextInt();
+		switch (op) {
+		case 1:
+			System.out.println("1 - Círculo /n 2 - Triângulo /n 3 - Trapézio /n 4 - Retângulo");
+			int area = scanner.nextInt();
+			switch (area) {
+			case 1:
+				System.out.println("Insira o valor do raio:");
+				raio = scanner.nextDouble();
+				circle(raio);
+				break;
+			case 2:
+				System.out.println("Digite o valor da base:");
+				base = scanner.nextDouble();
+				System.out.println("Digite o valor da altura:");
+				height = scanner.nextDouble();
+				triangle(base, height);
+				break;
+			case 3:
+				System.out.println("Digite o valor da base menor:");
+				ase = scanner.nextDouble();
+				System.out.println("Digite o valor da base maior:");
+				base = scanner.nextDouble();
+				System.out.println("Digite o valor da altura:");
+				height = scanner.nextDouble();
+				trapezium(ase,base,height);
+				break;
+			case 4:
+				System.out.println("Digite a base:");
+				base = scanner.nextDouble();
+				System.out.println("Digite a altura:");
+				height = scanner.nextDouble();
+				rectangle(base,height);
+				break;
+			}
+			break;
+		case 2:
+			System.out.println("a - Esfera /n b - Cilindro /n c - Cubo /n d - Paralelepípedo");
+			char volume = scanner.next().charAt(0);
+			switch(volume) {
+			case 'a':
+				System.out.println("Digite o raio:");
+				raio = scanner.nextDouble();
+				sphere (raio);
+				break;
+			case 'b':
+				System.out.println("Digite o valor do raio:");
+				raio = scanner.nextDouble();
+				System.out.println("Digite o valor da altura:");
+				height = scanner.nextDouble();
+				cylinder(raio, height);
+				break;
+			case 'c':
+				System.out.println("Digite o valor do lado:");
+				ase = scanner.nextDouble();
+				cube(ase);
+				break;
+			case 'd':
+				System.out.println("Digite o valor da largura:");
+				larg = scanner.nextDouble();
+				System.out.println("Digite o valor da profundidade:");
+				prof = scanner.nextDouble();
+				System.out.println("Digite o valor da altura:");
+				height = scanner.nextDouble();
+				recPrism(larg,prof,height);
+				break;
+			}
+			break;
+		}
+	}
+	static void circle (double raio) {
+		double area = Math.pow((pi*raio), 2);
+		System.out.println("Área: " + area);
+	}
+	static void triangle(double b, double h) {
+		double area = (b*h)/2;
+		System.out.println ("Área:" + area);
+	}
+	static void trapezium (double a, double b, double h) {
+		double area = ((a+b)*h)/2;
+		System.out.println ("Área: " + area);
+	}
+	static void rectangle (double b, double h) {
+		double area = b*h;
+		System.out.println("Área: " + area);
+	}
+	static void sphere (double r) {
+		double volume = (4/3)*pi*Math.pow(r, 3);
+		System.out.println("Volume: " + volume);
+	}
+	static void cylinder (double r, double h) {
+		double volume = Math.pow(r, 2)*h;
+		System.out.println("Volume: " + volume);
+	}
+	static void cube (double a) {
+		double volume = Math.pow(a, 3);
+		System.out.println ("Volume: " + volume);
+	}
+	static void recPrism (double l, double p, double h) {
+		double volume = l * p * h;
+		System.out.println("Volume: " + volume);
+	}
+
+}
