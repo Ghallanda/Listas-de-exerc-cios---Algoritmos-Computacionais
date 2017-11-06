@@ -1,0 +1,71 @@
+import java.util.Scanner;
+public class q2 {
+	public static void main (String [] args) {
+		Scanner s = new Scanner (System.in);
+		int op, num1, num2, num3;
+		System.out.println("CALCULADORA DIFERENTONA");
+		do {
+			System.out.println("MENU \n 1 - Calculadora de Divisor (calcula se o numero x é divisível pelo número y) \n 2 - Calculadora de MDC (calcula o MDC de dois números inteiros) \n 3 - Organizadora de numeros em ordem crescente \n 4 - SAIR");
+			op = s.nextInt();
+			switch (op) {
+			case 1:
+				System.out.println("Digite o dividendo:");
+				num1 = s.nextInt();
+				System.out.println("Digite o divisor:");
+				num2 = s.nextInt();
+				System.out.println(divisor(num1, num2));
+				break;
+			case 2:
+				System.out.println("Digite X:");
+				num1 = s.nextInt();
+				System.out.println("Digite Y:");
+				num2 = s.nextInt();
+				System.out.println(mdc(num1, num2));
+				break;
+			case 3:
+				System.out.println("Digite 3 numeros:");
+				num1 = s.nextInt();
+				num2 = s.nextInt();
+				num3 = s.nextInt();
+				System.out.println(ordem (num1, num2, num3));
+				break;
+			case 4:
+				break;
+			}		
+		}while (op != 4);
+		}
+	
+	static String divisor (int dividendo, int divisor) {
+		if (dividendo % divisor == 0) {
+			return("é divisível");
+		} else {
+			return("é divisível");
+		}
+	}
+	static int mdc (int x, int y) {
+		int resto = x % y;
+		while (resto != 0) {
+			x = y;
+			y = resto;
+			resto = x % y;
+		}
+		return(y);
+	}
+	static String ordem (int a, int b, int c) {
+		if (a < b && b <c) {
+			return(a + ", " + b +", " + c);
+		}else if (a < c && c < b) {
+			return(a + ", " + c + ", " + b);
+		}else if (b < c && c < a) {
+			return(b + ", " + c + ", " + a);
+		}else if (b < a && a < c) {
+			return(b + ", " + a + ", " + c);
+		}else if (c < b && b < a) {
+			return(c + ", " + b + "," + a);
+		}else if (c < a && a < b) {
+			return (c + ", " + a + ", " + b);
+		}
+		return null;
+	}
+
+}
